@@ -1,11 +1,12 @@
 import pygame
 from player import Player
+from constants import SCREEN_WIDTH, SCREEN_HEIGHT
 
 pygame.init()
-screen = pygame.display.set_mode((1280, 720))
+screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 clock = pygame.time.Clock()
 dt = 0
-player = Player(1280/2, 720/2)
+player = Player(100, SCREEN_HEIGHT/2)
 
 running = True
 

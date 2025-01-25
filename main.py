@@ -1,17 +1,23 @@
 import pygame
 from player import Player
+from ball import Ball
 from constants import SCREEN_WIDTH, SCREEN_HEIGHT
 
 pygame.init()
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+
 clock = pygame.time.Clock()
 dt = 0
 
 updatable = pygame.sprite.Group()
 drawable = pygame.sprite.Group()
 
+Player.containers = (updatable, drawable)
 player = Player(100, SCREEN_HEIGHT/2)
-Player.containers(updatable, drawable)
+
+Ball.containers = (updatable, drawable)
+ball = Ball(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
+
 
 running = True
 

@@ -20,4 +20,15 @@ class BoxShape(pygame.sprite.Sprite):
 
 
     #Add collision check 
-    #def collision_check(self, other):
+    def collision_check(self, other):
+        selfRight = self.position.x + (self.width / 2)
+        selfLeft = self.position.x - (self.width / 2)
+        selfTop = self.position.y + (self.height / 2)
+        selfBottom = self.position.y - (self.height / 2)
+
+        otherRight = other.position.x + (other.width / 2)
+        otherLeft = other.position.x - (other.width / 2)
+        otherTop = other.position.y + (other.height / 2)
+        otherBottom = other.position.y - (other.height / 2)
+        
+        return selfLeft >= otherRight and selfRight <= otherLeft and selfBottom >= otherTop and selfTop <= otherBottom 
